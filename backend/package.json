@@ -1,0 +1,26 @@
+{
+	"name": "backend",
+	"version": "0.1.0",
+	"description": "Backend project",
+	"private": true,
+	"author": "Sal Rahman",
+	"license": "MIT",
+	"scripts": {
+		"build": "rimraf dist && tsc",
+		"dev": "nodemon src/main.ts",
+		"start": "node dist/main.js",
+		"prestart": "npm run build",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@types/koa": "^2.13.6",
+		"cross-env": "^7.0.3",
+		"nodemon": "^2.0.22",
+		"rimraf": "^4.4.1",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.0.3"
+	},
+	"dependencies": {
+		"koa": "^2.14.1"
+	}
+}
