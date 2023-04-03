@@ -15,6 +15,15 @@ const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 
+type IRI = string;
+
+type Collection<T> = {
+	totalItems: number;
+	prev?: IRI;
+	next?: IRI;
+	items: T[];
+};
+
 const app = new Koa();
 app.use(cors());
 app.use(bodyParser());
@@ -56,6 +65,8 @@ router.post("/login/google", async (ctx) => {
 	ctx.response.status = 501;
 	ctx.response.body = "Got request, but won't verify it";
 });
+
+router.get("/posts", () => {});
 
 app.use(router.routes());
 

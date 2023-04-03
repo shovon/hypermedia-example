@@ -18,7 +18,7 @@ type Author = {
 type PostBase = {
 	id: IRI;
 	whenCreated: Date;
-	comments;
+	comments: IRI;
 };
 
 type Post = (
