@@ -3,7 +3,14 @@
 		"outDir": "dist",
 		"target": "ES2022",
 		"strict": true,
-		"incremental": true
+		"incremental": true,
+		"module": "CommonJS",
+		"allowJs": true
 	},
-	"include": ["src/**/*"]
+	"ts-node": {
+		"transpileOnly": true,
+		"files": true
+	},
+	"include": ["src", "src/*", "src/**/*", "koa-cookies.d.ts"],
+	"exclude": ["node_modules", "dist", "src/__tests__"]
 }

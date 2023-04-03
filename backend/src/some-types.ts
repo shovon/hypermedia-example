@@ -32,3 +32,16 @@ type Post = (
 	  }
 ) &
 	PostBase;
+
+type PostComment = (
+	| {
+			isDeleted: false;
+			author: IRI | null;
+			postBody: string;
+			inReplyTo: IRI;
+	  }
+	| {
+			isDeleted: true;
+	  }
+) &
+	PostBase;
